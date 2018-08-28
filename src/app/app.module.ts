@@ -21,6 +21,7 @@ import { ItemsService } from './services/items.service';
 import { AuthService } from './services/auth.service';
 import { NavbarService } from './services/navbar.service';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignInGuardGuard } from './services/guard/sign-in.guard';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     TodosService,
     ItemsService,
     AuthService,
-    NavbarService
+    NavbarService,
+    SignInGuardGuard
   ],
   bootstrap: [AppComponent]
 })
