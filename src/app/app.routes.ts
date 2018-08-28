@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { ItemsComponent } from './components/todos/items/items.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 
@@ -14,6 +15,7 @@ const app_routes: Routes = [
   { path: 'todos/:todo_id/items', component: ItemsComponent },
 
   { path: 'sign-in', component: SignInComponent },
+  { path: 'sign-up', component: SignUpComponent },
 
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];

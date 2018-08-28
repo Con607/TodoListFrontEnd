@@ -10,6 +10,7 @@ import { ItemsComponent } from './components/todos/items/items.component';
 import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 // Routes
 import { APP_ROUTING } from './app.routes';
@@ -18,6 +19,8 @@ import { APP_ROUTING } from './app.routes';
 import { TodosService } from './services/todos.service';
 import { ItemsService } from './services/items.service';
 import { AuthService } from './services/auth.service';
+import { NavbarService } from './services/navbar.service';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import { AuthService } from './services/auth.service';
     ItemsComponent,
     HomeComponent,
     DashboardComponent,
-    SignInComponent
+    SignInComponent,
+    NavbarComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,8 @@ import { AuthService } from './services/auth.service';
   providers: [
     TodosService,
     ItemsService,
-    AuthService
+    AuthService,
+    NavbarService
   ],
   bootstrap: [AppComponent]
 })
