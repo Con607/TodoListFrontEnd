@@ -1,3 +1,33 @@
-<p>
-  todos works!
-</p>
+
+
+
+<div class="col-md-8 offset-lg-2 shadow p-3 mb-5 bg-white rounded">
+
+  <div class="card">
+    <h5 class="card-header text-primary">
+      Tasks List
+      <!-- <i class="fa fa-plus-circle pull-right text-primary pointer" (click)="newTodoListMessage()"></i> -->
+    </h5>
+
+    <form ngNativeValidate [formGroup]="form" (ngSubmit)="addItem()">
+      <div class="input-group">
+        <input formControlName="name" name="name" type="text" class="form-control" placeholder="Description" required>
+        <div class="input-group-prepend">
+          <span class="input-group-text">
+            <button type="submit" class="btn btn-primary">Add</button>
+          </span>
+        </div>
+      </div>
+    </form>
+
+    <ul class="list-group list-group-flush">
+      <li *ngFor="let item of items; let i = index" class="list-group-item">
+        {{ item?.name }}
+        <i class="fa fa-trash-o pull-right text-danger pointer" (click)="deleteItem(i)" style="margin-left:1rem;"></i>
+        <i class="fa fa-pencil pull-right text-info pointer" [routerLink]="['/todos/', todo_id, 'items']"></i>
+      </li>
+    </ul>
+
+  </div>
+
+</div>
