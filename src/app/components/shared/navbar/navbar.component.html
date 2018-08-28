@@ -1,17 +1,20 @@
 
 
-<nav *ngIf="_navbarService.visible" class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button">
+<nav *ngIf="_navbarService.visible" class="navbar navbar-expand-md navbar-dark bg-primary" style="margin-bottom:2rem;">
     <div class="container">
-      <a [routerLink]="['/home']" class="navbar-brand"></a><button class="navbar-toggler" data-toggle="collapse"
+      <a [routerLink]="['/home']" class="navbar-brand">Todo Application</a><button class="navbar-toggler" data-toggle="collapse"
             data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navcol-1">
-            <ul class="nav navbar-nav mx-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link" href=""></a></li>
+            <ul class="nav navbar-nav mr-auto">
+                <li *ngIf="authService.isLoggedIn()" class="nav-item" role="presentation">
+                  <a [routerLink]="['/dashboard']" class="nav-link">Dashboard</a></li>
             </ul>
             <span class="navbar-text actions">
               <a *ngIf="!authService.isLoggedIn()" [routerLink]="['/sign-in']" class="login pointer">Log In</a>
               <a *ngIf="authService.isLoggedIn()" (click)="authService.logOutUser()" class="login pointer">Log Out</a>
-              <a *ngIf="!authService.isLoggedIn()" [routerLink]="['/sign-up']" class="btn btn-light action-button" role="button">Sign Up</a>
+              <a *ngIf="!authService.isLoggedIn()" [routerLink]="['/sign-up']"
+                    class="btn btn-outline-light" role="button"
+                    style="margin-left:1rem;" >Sign Up</a>
             </span>
           </div>
     </div>
