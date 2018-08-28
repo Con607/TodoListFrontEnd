@@ -3,6 +3,7 @@ import { HomeComponent } from './components/home/home.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TodosComponent } from './components/todos/todos.component';
 import { ItemsComponent } from './components/todos/items/items.component';
+import { SignInComponent } from './components/sign-in/sign-in.component';
 
 
 
@@ -11,6 +12,9 @@ const app_routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'todos', component: TodosComponent },
   { path: 'todos/:todo_id/items', component: ItemsComponent },
+
+  { path: 'sign-in', component: SignInComponent },
+
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 
